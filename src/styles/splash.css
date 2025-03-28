@@ -1,0 +1,70 @@
+.splash-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #1e1e2f, #121212);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .splash-logo {
+    animation: zoomFade 5s ease-in-out;
+  }
+  
+  .splash-logo h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: #00ffff;
+    text-shadow: 0 0 20px #00ffff99;
+  }
+  
+  .subtitle {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    color: #fff;
+    animation: fadeUp 5s ease forwards;
+  }
+  
+  @keyframes zoomFade {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    50% {
+        transform: scale(0.8);
+        opacity: 0.5;
+      }
+    100% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(10px);
+      }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .splash-logo h1 {
+      font-size: 2.4rem;
+    }
+  
+    .subtitle {
+      font-size: 1.1rem;
+    }
+  }
+  

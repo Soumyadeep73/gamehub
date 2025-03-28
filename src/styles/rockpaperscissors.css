@@ -1,0 +1,122 @@
+.rps-container {
+    text-align: center;
+    padding: 2rem;
+    animation: fadeIn 1s ease;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .scoreboard {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-weight: bold;
+  }
+  
+  .choices button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    margin: 0.5rem;
+    border-radius: 10px;
+    background: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+  }
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 25px;
+  }
+  
+  .btn-group button {
+    background: linear-gradient(to right, #20bf6b, #0fbcf9);
+    color: #000;
+    padding: 12px 22px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px #20bf6baa;
+    transition: 0.3s ease;
+  }
+  
+  .btn-group button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #20bf6bcc;
+  }
+  .choices button:hover {
+    transform: scale(1.1);
+    background: #888;
+  }
+  
+  .result {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .result h3 {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #00ff88;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    .choices button {
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .rules-box {
+    margin: 20px auto;
+    padding: 15px 25px;
+    background-color: #fff3e0;
+    border: 2px solid #ff9800;
+    border-radius: 12px;
+    max-width: 500px;
+    text-align: left;
+    box-shadow: 0 0 10px #ff980055;
+    animation: fadeIn 0.8s ease;
+  }
+  
+  .rules-box h4 {
+    margin-bottom: 10px;
+    color: #ef6c00;
+    font-size: 18px;
+  }
+  
+  .rules-box ul {
+    padding-left: 20px;
+  }
+  
+  .rules-box li {
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #333;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

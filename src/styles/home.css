@@ -1,0 +1,130 @@
+.home-container {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+    min-height: 100vh;
+    color: white;
+    position: relative;
+  }
+  
+  /* Title */
+  .home-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #00ffc3;
+    text-shadow: 0 0 8px #00ffc399;
+  }
+  
+  /* Sound toggle button */
+  .sound-toggle {
+    background-color: #222;
+    color: #00ffc3;
+    border: 2px solid #00ffc3;
+    padding: 0.5rem 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  .sound-toggle:hover {
+    background-color: #00ffc3;
+    color: #000;
+  }
+  
+  /* Grid layout for 4 icons in square */
+  .square-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 140px);
+    grid-template-rows: repeat(2, 140px);
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+  
+  .game-tile {
+    width: 140px;
+    height: 140px;
+    background: #1a1a1a;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.4s ease;
+    box-shadow: 0 0 14px #ffffff22;
+    backdrop-filter: blur(6px);
+  }
+  .game-tile:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 22px #00ffc3aa;
+  }
+  
+  .game-tile img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 4px #ffffff55);
+  }
+  
+  .game-tile p {
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .last-played {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #fffd;
+    animation: fadeIn 1s ease;
+  }
+  .last-played strong {
+    color: #00ffc3;
+  }
+  
+  /* Fade animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsive layout for mobile */
+  @media (max-width: 600px) {
+    .square-grid {
+      grid-template-columns: repeat(2, 110px);
+      grid-template-rows: repeat(2, 110px);
+      gap: 1.4rem;
+    }
+  
+    .game-tile {
+      width: 110px;
+      height: 110px;
+    }
+  
+    .game-tile img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .game-tile p {
+      font-size: 0.8rem;
+    }
+  
+    .home-title {
+      font-size: 2.2rem;
+    }
+  
+    .sound-toggle {
+      padding: 0.4rem 0.9rem;
+      font-size: 0.9rem;
+    }
+  }
+  

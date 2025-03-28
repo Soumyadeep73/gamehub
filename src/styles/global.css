@@ -1,0 +1,96 @@
+/* Reset & Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #0e0e15;
+    color: white;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+  
+  /* Buttons */
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    background-color: #222;
+    color: white;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #333;
+    transform: scale(1.05);
+  }
+  
+  /* Input Fields */
+  input, select {
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background-color: #111;
+    color: white;
+  }
+  
+  /* Headings */
+  h1, h2, h3 {
+    font-weight: 600;
+    color: #00ffff;
+  }
+  
+  /* Links */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Utility Classes */
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .flex-col {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mt-1 { margin-top: 1rem; }
+  .mt-2 { margin-top: 2rem; }
+  .mb-1 { margin-bottom: 1rem; }
+  .mb-2 { margin-bottom: 2rem; }
+  
+  /* Transitions */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsive Typography */
+  @media (max-width: 600px) {
+    body {
+      font-size: 15px;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    h2 {
+      font-size: 1.4rem;
+    }
+  }
+  
