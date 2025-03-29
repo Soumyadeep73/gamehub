@@ -4,6 +4,7 @@ import { Howl } from "howler";
 import bgMusicFile from "../assets/audio/memory-bg.mp3";
 import winSoundFile from "../assets/audio/win.mp3";
 import loseSoundFile from "../assets/audio/lose.mp3";
+import { useNavigate } from "react-router-dom";
 
 const allEmojis = [
   "🍎", "🍌", "🍇", "🍒", "🍉", "🍓", "🥝", "🍍", "🍑", "🥭",
@@ -21,6 +22,7 @@ export default function MemoryGame() {
   const [timer, setTimer] = useState(0);
   const [score, setScore] = useState(0);
   const [bgMusic, setBgMusic] = useState(null);
+  const navigate = useNavigate();
 
   // Initialize background music on mount
   useEffect(() => {
@@ -65,7 +67,7 @@ export default function MemoryGame() {
     if (timer <= 0) {
       if (phase === "memorize") {
         setPhase("guess");
-        setTimer(15);
+        setTimer(10);
       } else if (phase === "guess") {
         finishGame();
       }
@@ -94,7 +96,7 @@ export default function MemoryGame() {
 
     let score = 0;
     selected.forEach((img) => {
-      if (correctAnswers.includes(img)) score += 1;
+      if (correctAnswers.includes(img)) score += 2;
       else score -= 1;
     });
 
@@ -120,16 +122,17 @@ export default function MemoryGame() {
         <ul>
           <li>🧠 You’ll see 12 random emojis to memorize in 10 seconds.</li>
           <li>🤔 Then you’ll be shown 8 emojis — choose the ones you saw before!</li>
-          <li>✅ +1 point for a correct guess</li>
+          <li>✅ +2 point for a correct guess</li>
           <li>❌ -1 point for a wrong guess</li>
           <li>🎯 Max score: 8</li>
         </ul>
       </div>
-
+      <div className="btn-group">
+        <button onClick={() => navigate("/home")}>🏠 Home</button>
+      </div>
       {phase === "start" && (
         <div className="btn-group">
           <button onClick={startGame}>▶️ Play Now</button>
-          <button onClick={() => (window.location.href = "/home")}>🏠 Home</button>
         </div>
       )}
 
@@ -137,6 +140,7 @@ export default function MemoryGame() {
         <>
           <h2>Phase: {phase.toUpperCase()}</h2>
           <h3>⏱ Time Left: {timer}s</h3>
+          
         </>
       )}
 
@@ -182,7 +186,6 @@ export default function MemoryGame() {
           </div>
           <div className="btn-group">
             <button onClick={startGame}>🔁 Play Again</button>
-            <button onClick={() => window.location.href = "/home"}>🏠 Home</button>
           </div>
         </>
       )}

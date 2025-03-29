@@ -38,7 +38,7 @@ export default function Splash() {
     <div className="splash-container">
       <div className="splash-logo">
         <h1>🎮 Game Hub</h1>
-        <p className="subtitle">Get Ready to Play!</p>
+        <p className="subtitle">Khela Hobe✊✊✊</p>
       </div>
     </div>
   );

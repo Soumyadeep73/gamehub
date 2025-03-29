@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import clickSound from "./assets/audio/click.mp3";
 import { Howl } from "howler";
 import "./styles/home.css";
@@ -8,33 +8,22 @@ import hangman from "./assets/image/hangman.png";
 import memory from "./assets/image/memorygame.png";
 import rps from "./assets/image/rockpaperseciors.png";
 
+// click sound
+const click = new Howl({ src: [clickSound], volume: 1 });
+
 export default function Home() {
   const navigate = useNavigate();
   const [lastGame, setLastGame] = useState("");
   const [soundOn, setSoundOn] = useState(true);
-  const [click, setClick] = useState(null);
-
-  useEffect(() => {
-    const clickSoundInstance = new Howl({
-      src: [clickSound],
-      volume: soundOn ? 1 : 0,
-    });
-    setClick(clickSoundInstance);
-
-    // Optional cleanup
-    return () => {
-      clickSoundInstance.unload();
-    };
-  }, [soundOn]);
 
   const handleClick = (path, name) => {
-    if (click && soundOn) click.play();
+    if (soundOn) click.play();
     setLastGame(name);
     navigate(path);
   };
 
   const toggleSound = () => {
-    setSoundOn((prev) => !prev);
+    setSoundOn(!soundOn);
   };
 
   const games = [
@@ -70,9 +59,7 @@ export default function Home() {
       </div>
 
       {lastGame && (
-        <p className="last-played">
-          🎯 Last played: <strong>{lastGame}</strong>
-        </p>
+        <p className="last-played">🎯 Last played: <strong>{lastGame}</strong></p>
       )}
     </div>
   );

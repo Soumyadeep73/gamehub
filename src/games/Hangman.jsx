@@ -87,6 +87,7 @@ export default function Hangman() {
 
   const startGame = () => {
     const random = wordsData[Math.floor(Math.random() * wordsData.length)];
+    
     setWordData(random);
     setGuessed([]);
     setWrong([]);
